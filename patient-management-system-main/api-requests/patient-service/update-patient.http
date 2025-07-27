@@ -1,0 +1,11 @@
+### UPDATE request
+PUT http://localhost:4000/patients/990be994-4d73-4ac3-968e-f77aa9958e7b
+Content-Type: application/json
+
+{
+  "name": "Khan Ameer Xhar",
+  "email": "jane.smith@example.com",
+  "address": "123, main street",
+  "dateOfBirth": "1995-09-09"
+}
+###
