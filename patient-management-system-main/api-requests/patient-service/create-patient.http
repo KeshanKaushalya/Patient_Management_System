@@ -1,0 +1,13 @@
+### POST request to save patient entity
+POST http://localhost:4000/patients
+Content-Type: application/json
+
+{
+  "name": "Raveen kafka test",
+  "email": "raveen_test.kafka@example.com",
+  "address": "353, Galagedara",
+  "dateOfBirth": "2001-08-30",
+  "registeredDate": "2023-08-14"
+}
+
+###
