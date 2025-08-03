@@ -12,6 +12,7 @@ import HomePage from './pages/HomePage';
 import RegisterPage from './pages/RegisterPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
+import AdminDashboard from './pages/AdminDashboard';
 import './App.css';
 
 function PrivateRoute({ children }) {
@@ -35,6 +36,7 @@ function App() {
             <Route path="billing" element={<BillingPage />} />
             <Route path="analytics" element={<AnalyticsPage />} />
           </Route>
+          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </Router>
     </Provider>
