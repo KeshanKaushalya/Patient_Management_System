@@ -44,39 +44,40 @@ const HomePage = () => {
 
   return (
     <Box>
-      <AppBar position="static" color="default" elevation={1}>
-        <Toolbar>
-          <LocalHospitalIcon sx={{ fontSize: 32, color: '#1976d2', mr: 1 }} />
-          <Typography variant="h6" color="primary" sx={{ flexGrow: 1, fontWeight: 700 }}>
+      <AppBar position="static" color="default" elevation={1} sx={{ width: '100vw', maxWidth: '110vw', left: 0, transform: 'none', background: '#0a2e5c' }}>
+        <Toolbar sx={{ width: '100vw', maxWidth: '100vw', px: 0 }}>
+          <LocalHospitalIcon sx={{ fontSize: 32, color: '#bfa046', mr: 1 }} />
+          <Typography variant="h6" color="#fff" sx={{ flexGrow: 1, fontWeight: 700, fontFamily: 'Montserrat, Arial, sans-serif' }}>
             Patient Management System
           </Typography>
-          <MuiLink color="inherit" underline="none" sx={{ mx: 2, cursor: 'pointer' }} onClick={() => navigate('/')}>Home</MuiLink>
-          <MuiLink color="inherit" underline="none" sx={{ mx: 2, cursor: 'pointer' }} onClick={() => navigate('/about')}><InfoIcon sx={{ verticalAlign: 'middle', mr: 0.5 }} />About</MuiLink>
-          <MuiLink color="inherit" underline="none" sx={{ mx: 2, cursor: 'pointer' }} onClick={() => navigate('/contact')}><ContactPageIcon sx={{ verticalAlign: 'middle', mr: 0.5 }} />Contact</MuiLink>
+          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/')}>Home</MuiLink>
+          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/about')}><InfoIcon sx={{ verticalAlign: 'middle', mr: 0.5, color: '#bfa046' }} />About</MuiLink>
+          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/contact')}><ContactPageIcon sx={{ verticalAlign: 'middle', mr: 0.5, color: '#bfa046' }} />Contact</MuiLink>
         </Toolbar>
       </AppBar>
       <Container maxWidth="lg" sx={{ mt: 10, mb: 6 }}>
         <Box sx={{
           maxWidth: 1000,
-          mx: 'fit',
+          mx: 'auto',
           mb: 6,
-          p: 20,
+          p: 8,
           borderRadius: 4,
           boxShadow: 4,
           background: '#fff',
           transform: 'scale(1.08)',
+          border: '2px solid #bfa046',
         }}>
-          <Typography variant="h3" align="center" gutterBottom color="primary">
-            <LocalHospitalIcon sx={{ fontSize: 60, verticalAlign: 'middle', color: '#1976d2' }} />
+          <Typography variant="h3" align="center" gutterBottom sx={{ color: '#0a2e5c', fontWeight: 700, fontFamily: 'Montserrat, Arial, sans-serif' }}>
+            <LocalHospitalIcon sx={{ fontSize: 60, verticalAlign: 'middle', color: '#bfa046' }} />
             Patient Management System
           </Typography>
-          <Typography variant="h6" align="center" color="text.secondary" mb={4}>
+          <Typography variant="h6" align="center" color="#0a2e5c" mb={4} sx={{ fontWeight: 500 }}>
             Welcome to your healthcare dashboard. {token ? 'Select a feature to get started.' : 'Please log in or register to access features.'}
           </Typography>
           {!token ? (
             <Box display="flex" justifyContent="center" gap={2} mt={4}>
-              <Button variant="contained" color="primary" onClick={() => navigate('/login')}>Login</Button>
-              <Button variant="outlined" color="primary" onClick={() => navigate('/register')}>Register</Button>
+              <Button variant="contained" sx={{ background: '#0a2e5c', color: '#fff', fontWeight: 700, '&:hover': { background: '#bfa046' } }} onClick={() => navigate('/login')}>Login</Button>
+              <Button variant="outlined" sx={{ borderColor: '#bfa046', color: '#0a2e5c', fontWeight: 700, '&:hover': { background: '#bfa046', color: '#fff' } }} onClick={() => navigate('/register')}>Register</Button>
             </Box>
           ) : null}
         </Box>
@@ -84,20 +85,20 @@ const HomePage = () => {
           <Grid container spacing={4} justifyContent="center" sx={{ minWidth: 900 }}>
             {features.map((feature) => (
               <Grid item xs={12} sm={6} md={4} key={feature.title}>
-                <Card sx={{ minHeight: 400, maxWidth: 370, width: 370, m: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 3 }}>
+                <Card sx={{ minHeight: 400, maxWidth: 370, width: 370, m: '5px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', boxShadow: 3, border: '2px solid #bfa046', background: '#fff' }}>
                   <CardContent sx={{ textAlign: 'center' }}>
                     {feature.icon}
-                    <Typography variant="h5" mt={2} mb={1}>{feature.title}</Typography>
-                    <Typography color="text.secondary" mb={2}>{feature.description}</Typography>
+                    <Typography variant="h5" mt={2} mb={1} sx={{ color: '#0a2e5c', fontWeight: 700 }}>{feature.title}</Typography>
+                    <Typography color="text.secondary" mb={2} sx={{ color: '#0a2e5c' }}>{feature.description}</Typography>
                     <Box display="flex" justifyContent="center" mb={2}>
                       <img src={feature.clipart} alt={feature.title + ' clipart'} style={{ width: 80, height: 80, objectFit: 'contain' }} />
                     </Box>
                   </CardContent>
                   <CardActions sx={{ justifyContent: 'center', mb: 1 }}>
-                    <Button variant="contained" color="primary" onClick={() => navigate(feature.link)}>
+                    <Button variant="contained" sx={{ background: '#0a2e5c', color: '#fff', fontWeight: 700, '&:hover': { background: '#bfa046' } }} onClick={() => navigate(feature.link)}>
                       Go to {feature.title}
                     </Button>
-                    <Button variant="outlined" color="secondary" onClick={() => navigate(feature.more)}>
+                    <Button variant="outlined" sx={{ borderColor: '#bfa046', color: '#0a2e5c', fontWeight: 700, '&:hover': { background: '#bfa046', color: '#fff' } }} onClick={() => navigate(feature.more)}>
                       More Info
                     </Button>
                   </CardActions>
@@ -107,24 +108,24 @@ const HomePage = () => {
           </Grid>
         </Box>
         <Box mt={8} textAlign="center">
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body1" color="#0a2e5c">
             <b>Backend Features:</b> Microservices for Patient Management, Billing, Authentication, and Analytics. Built with Java Spring Boot, PostgreSQL, and gRPC for secure, scalable healthcare data management.
           </Typography>
         </Box>
       </Container>
-      <Box component="footer" sx={{ bgcolor: '#f5f5f5', py: 3, mt: 4 }}>
+      <Box component="footer" sx={{ bgcolor: '#0a2e5c', py: 3, mt: 4 }}>
         <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between' }}>
           <Box display="flex" alignItems="center" gap={1}>
-            <GitHubIcon sx={{ color: '#333' }} />
-            <MuiLink href="https://github.com/KeshanKaushalya" target="_blank" color="inherit" underline="hover">
+            <GitHubIcon sx={{ color: '#bfa046' }} />
+            <MuiLink href="https://github.com/KeshanKaushalya" target="_blank" color="#fff" underline="hover" sx={{ fontWeight: 700 }}>
                 KeshanKaushalya
             </MuiLink>
           </Box>
           <Box display="flex" gap={2} mt={{ xs: 2, md: 0 }}>
-            <Button color="primary" onClick={() => navigate('/')}>Home</Button>
-            <Button color="primary" onClick={() => navigate('/about')}>About</Button>
-            <Button color="primary" onClick={() => navigate('/contact')}>Contact</Button>
-            <Button color="secondary" startIcon={<FeedbackIcon />} onClick={() => navigate('/contact#feedback')}>Feedback</Button>
+            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/')}>Home</Button>
+            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/about')}>About</Button>
+            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/contact')}>Contact</Button>
+            <Button color="secondary" startIcon={<FeedbackIcon />} sx={{ color: '#bfa046', fontWeight: 700 }} onClick={() => navigate('/contact#feedback')}>Feedback</Button>
           </Box>
         </Container>
       </Box>
