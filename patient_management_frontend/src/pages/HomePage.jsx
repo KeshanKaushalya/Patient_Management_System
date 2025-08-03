@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardActions, Button, AppBar, Toolbar, Link as MuiLink, Container } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardActions, Button, Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
@@ -44,17 +44,6 @@ const HomePage = () => {
 
   return (
     <Box>
-      <AppBar position="static" color="default" elevation={1} sx={{ width: '100vw', maxWidth: '110vw', left: 0, transform: 'none', background: '#0a2e5c' }}>
-        <Toolbar sx={{ width: '100vw', maxWidth: '100vw', px: 0 }}>
-          <LocalHospitalIcon sx={{ fontSize: 32, color: '#bfa046', mr: 1 }} />
-          <Typography variant="h6" color="#fff" sx={{ flexGrow: 1, fontWeight: 700, fontFamily: 'Montserrat, Arial, sans-serif' }}>
-            Patient Management System
-          </Typography>
-          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/')}>Home</MuiLink>
-          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/about')}><InfoIcon sx={{ verticalAlign: 'middle', mr: 0.5, color: '#bfa046' }} />About</MuiLink>
-          <MuiLink color="#fff" underline="none" sx={{ mx: 2, cursor: 'pointer', fontWeight: 600 }} onClick={() => navigate('/contact')}><ContactPageIcon sx={{ verticalAlign: 'middle', mr: 0.5, color: '#bfa046' }} />Contact</MuiLink>
-        </Toolbar>
-      </AppBar>
       <Container maxWidth="lg" sx={{ mt: 10, mb: 6 }}>
         <Box sx={{
           maxWidth: 1000,
@@ -113,22 +102,6 @@ const HomePage = () => {
           </Typography>
         </Box>
       </Container>
-      <Box component="footer" sx={{ bgcolor: '#0a2e5c', py: 3, mt: 4 }}>
-        <Container maxWidth="lg" sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between' }}>
-          <Box display="flex" alignItems="center" gap={1}>
-            <GitHubIcon sx={{ color: '#bfa046' }} />
-            <MuiLink href="https://github.com/KeshanKaushalya" target="_blank" color="#fff" underline="hover" sx={{ fontWeight: 700 }}>
-                KeshanKaushalya
-            </MuiLink>
-          </Box>
-          <Box display="flex" gap={2} mt={{ xs: 2, md: 0 }}>
-            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/')}>Home</Button>
-            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/about')}>About</Button>
-            <Button sx={{ color: '#fff', fontWeight: 700 }} onClick={() => navigate('/contact')}>Contact</Button>
-            <Button color="secondary" startIcon={<FeedbackIcon />} sx={{ color: '#bfa046', fontWeight: 700 }} onClick={() => navigate('/contact#feedback')}>Feedback</Button>
-          </Box>
-        </Container>
-      </Box>
     </Box>
   );
 };

@@ -25,18 +25,18 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/logout" element={<LogoutPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/app" element={<PrivateRoute><MainLayout /></PrivateRoute>}>
-            <Route path="patients" element={<PatientsPage />} />
-            <Route path="billing" element={<BillingPage />} />
-            <Route path="analytics" element={<AnalyticsPage />} />
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/app/patients" element={<PatientsPage />} />
+            <Route path="/app/billing" element={<BillingPage />} />
+            <Route path="/app/analytics" element={<AnalyticsPage />} />
+            <Route path="/admin" element={<AdminDashboard />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/logout" element={<LogoutPage />} />
           </Route>
-          <Route path="/admin" element={<AdminDashboard />} />
         </Routes>
       </Router>
     </Provider>
