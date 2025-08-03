@@ -9,9 +9,10 @@ const MainLayout = () => (
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           Patient Management System
         </Typography>
-        <Button color="inherit" component={Link} to="/patients">Patients</Button>
-        <Button color="inherit" component={Link} to="/billing">Billing</Button>
-        <Button color="inherit" component={Link} to="/analytics">Analytics</Button>
+        <Button color="inherit" component={Link} to="/">Home</Button>
+        <Button color="inherit" component={Link} to="/app/patients">Patients</Button>
+        <Button color="inherit" component={Link} to="/app/billing">Billing</Button>
+        <Button color="inherit" component={Link} to="/app/analytics">Analytics</Button>
         <Button color="inherit" component={Link} to="/logout">Logout</Button>
       </Toolbar>
     </AppBar>
