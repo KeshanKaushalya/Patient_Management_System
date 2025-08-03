@@ -8,15 +8,16 @@ import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 
 const navLinks = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Contact', to: '/contact' },
   { label: 'Patients', to: '/app/patients' },
   { label: 'Billing', to: '/app/billing' },
   { label: 'Analytics', to: '/app/analytics' },
   { label: 'Admin Dashboard', to: '/admin' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
   { label: 'Login', to: '/login' },
   { label: 'Register', to: '/register' },
   { label: 'Logout', to: '/logout' },
+  
 ];
 
 const MainLayout = () => {
@@ -25,14 +26,14 @@ const MainLayout = () => {
     <>
       {/* Nawaloka-style Navigation Bar */}
       <AppBar position="static" sx={{ background: 'linear-gradient(90deg, #0a2e5c 60%, #bfa046 100%)', boxShadow: 3 }}>
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: 72 }}>
-          <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
-            <LocalHospitalIcon sx={{ fontSize: 40, color: '#bfa046', mr: 1 }} />
-            <Typography variant="h5" sx={{ fontWeight: 700, color: '#fff', letterSpacing: 1, fontFamily: 'Montserrat, Arial, sans-serif' }}>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', minHeight: 60 }}>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+            <LocalHospitalIcon sx={{ fontSize: 20, color: '#bfa046', mr: 1 }} />
+            <Typography variant="h9" sx={{ fontWeight: 800, color: '#fff', letterSpacing: 1, fontFamily: 'Montserrat, Arial, sans-serif' }}>
               Patient Management System
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex', gap: 1 }}>
+          <Box sx={{ display: 'flex', gap: -5 }}>
             {navLinks.map(link => (
               <Button
                 key={link.to}
@@ -41,10 +42,10 @@ const MainLayout = () => {
                 to={link.to}
                 sx={{
                   color: location.pathname === link.to ? '#bfa046' : '#fff',
-                  fontWeight: 500,
-                  fontSize: 16,
+                  fontWeight: 600,
+                  fontSize: 12,
                   borderBottom: location.pathname === link.to ? '2px solid #bfa046' : 'none',
-                  borderRadius: 0,
+                  borderRadius: 5,
                   px: 2,
                   fontFamily: 'Montserrat, Arial, sans-serif',
                   '&:hover': {
@@ -63,19 +64,19 @@ const MainLayout = () => {
         <Outlet />
       </Box>
       {/* Nawaloka-style Footer, system-appropriate */}
-      <footer style={{ background: 'linear-gradient(90deg, #0a2e5c 60%, #bfa046 100%)', color: 'white', marginTop: 'auto', width: '100%', paddingTop: 32, paddingBottom: 16 }}>
+      <footer style={{ background: 'linear-gradient(90deg, #0a2e5c 60%, #bfa046 100%)', color: 'white', marginTop: 'auto', width: '100%', textAlign: 'center', padding: 16, paddingTop: 20, paddingBottom: 16 }}>
         <Container maxWidth="lg">
-          <Grid container spacing={4}>
+          <Grid container spacing={5}>
             {/* Brand & Description */}
             <Grid item xs={12} md={4}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 20, mb: 2 }}>
                 <LocalHospitalIcon sx={{ fontSize: 36, color: '#bfa046' }} />
                 <Typography variant="h6" sx={{ fontWeight: 700, color: '#fff', fontFamily: 'Montserrat, Arial, sans-serif' }}>
                   Patient Management System
                 </Typography>
               </Box>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.85)', mb: 2 }}>
-                Modern healthcare platform for patient, billing, and analytics management. Secure, reliable, and inspired by Nawaloka Hospital's excellence.
+                Modern healthcare platform for patient, billing, and analytics management. Secure, reliable, for your healthcare needs.
               </Typography>
               <Box sx={{ display: 'flex', gap: 1 }}>
                 <IconButton
@@ -157,7 +158,7 @@ const MainLayout = () => {
               © {new Date().getFullYear()} <a href="https://www.linkedin.com/in/keshankaushalya/" target="_blank" rel="noopener" style={{ color: '#bfa046', textDecoration: 'underline' }}>KeshanKaushalya</a>. All rights reserved.
             </Typography>
             <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.85)' }}>
-              Inspired by Nawaloka Hospital | Patient Management System
+              "Bringing Patients and Providers Closer." | Patient Management System
             </Typography>
           </Box>
         </Container>
