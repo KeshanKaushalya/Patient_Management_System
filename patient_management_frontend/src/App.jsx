@@ -8,6 +8,10 @@ import PatientsPage from './pages/PatientsPage';
 import BillingPage from './pages/BillingPage';
 import AnalyticsPage from './pages/AnalyticsPage';
 import LogoutPage from './pages/LogoutPage';
+import HomePage from './pages/HomePage';
+import RegisterPage from './pages/RegisterPage';
+import AboutPage from './pages/AboutPage';
+import ContactPage from './pages/ContactPage';
 import './App.css';
 
 function PrivateRoute({ children }) {
@@ -20,13 +24,16 @@ function App() {
     <Provider store={store}>
       <Router>
         <Routes>
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/logout" element={<LogoutPage />} />
-          <Route path="/" element={<PrivateRoute><MainLayout /></PrivateRoute>}>
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/app" element={<PrivateRoute><MainLayout /></PrivateRoute>}>
             <Route path="patients" element={<PatientsPage />} />
             <Route path="billing" element={<BillingPage />} />
             <Route path="analytics" element={<AnalyticsPage />} />
-            <Route index element={<Navigate to="/patients" />} />
           </Route>
         </Routes>
       </Router>
