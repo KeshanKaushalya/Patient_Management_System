@@ -126,7 +126,7 @@ const MainLayout = () => {
             </Grid>
             {/* Features */}
             <Grid item xs={12} sm={6} md={2}>
-              <Typography variant="h6" sx={{ fontWeight: 600, mb: 2, color: '#fff', fontFamily: 'Montserrat, Arial, sans-serif' }}>
+              <Typography variant="h6" sx={{ fontWeight: 600, mb: 0, color: '#fff', fontFamily: 'Montserrat, Arial, sans-serif' }}>
                 Features
               </Typography>
               <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
@@ -173,7 +173,7 @@ const footerLinkStyle = {
   fontWeight: 400,
   fontSize: 15,
   textTransform: 'none',
-  px: 0,
+  px: 0.10,
   py: 0.5,
   minWidth: 0,
   fontFamily: 'Montserrat, Arial, sans-serif',
