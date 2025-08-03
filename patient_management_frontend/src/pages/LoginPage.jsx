@@ -20,7 +20,7 @@ const LoginPage = () => {
     onSubmit: async (values) => {
       const result = await dispatch(login(values));
       if (result.meta.requestStatus === 'fulfilled') {
-        navigate('/patients');
+        navigate('/');
       }
     },
   });
@@ -62,6 +62,9 @@ const LoginPage = () => {
           {loading ? 'Logging in...' : 'Login'}
         </Button>
       </form>
+      <Button color="secondary" fullWidth sx={{ mt: 2 }} onClick={() => navigate('/register')}>
+        Don&apos;t have an account? Register
+      </Button>
     </Box>
   );
 };
