@@ -24,6 +24,11 @@ export const authService = {
     const token = localStorage.getItem('token');
     return token ? JSON.parse(atob(token.split('.')[1])) : null;
   },
+
+  register: async (user) => {
+    const response = await api.post(`${AUTH_API}/register`, user);
+    return response.data;
+  },
 };
 
 export default authService;
